@@ -1,11 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 
 const folderName = process.argv[2];
 
 if (!folderName) {
-    console.error('Please provide a folder name as the first argument.');
-    process.exit(1);
+  console.error('Please provide a folder name as the first argument.');
+  process.exit(1);
 }
 
 const projectRoot = process.cwd();
@@ -16,7 +16,7 @@ fs.mkdirSync(folderPath, { recursive: true });
 
 // Create index.ts file
 const indexPath = path.join(folderPath, 'index.ts');
-const className = capitalizeFirstLetter(folderName);
+const className = convertToPascalCase(folderName);
 
 const indexFileContent = `export default class ${className} {
   // Class implementation goes here
@@ -41,7 +41,14 @@ fs.writeFileSync(testFilePath, testFileContent);
 
 console.log(`Created folder "${folderName}" with index.ts and __tests__ folder in the project root directory.`);
 
+// Helper function to convert string to PascalCase
+function convertToPascalCase(string: string): string {
+  const words = string.split(/[-\s]/);
+  const capitalizedWords = words.map(word => capitalizeFirstLetter(word));
+  return capitalizedWords.join('');
+}
+
 // Helper function to capitalize the first letter of a string
-function capitalizeFirstLetter(string: string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(string: string): string {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

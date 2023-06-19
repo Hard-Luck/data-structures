@@ -35,7 +35,7 @@ npm test stack
 To create a new data structure, run the following command:
 
 ```bash
-npm run new <name of data structure>
+npm run new <name-of-data-structure>
 ```
 
 This command will create a folder with the specified data structure name under the `src` directory. It will include the necessary files, such as the implementation file and a test file. The class representing the data structure will be exported from the implementation file and imported into the test file for easy testing and validation.
@@ -52,7 +52,7 @@ This project is licensed under the terms of the MIT License. See the [LICENSE](L
 
 ## Acknowledgments
 
-This repository draws inspiration from the Primegens course on Frontend Masters, which provided valuable guidance and insights into data structures and their implementation. Their expertise and teaching have greatly contributed to the creation of this repository.
+This repository draws inspiration from the Primeagens course on Frontend Masters, which provided valuable guidance and insights into data structures and their implementation. Their expertise and teaching have greatly contributed to the creation of this repository.
 
 If you have any questions or suggestions, feel free to reach out. Happy learning and practicing!
 
